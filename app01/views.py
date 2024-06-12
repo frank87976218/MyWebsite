@@ -46,6 +46,17 @@ def login(request):
 
 
 def info_list(request):
-     data_list = Department.objects.all()
-     print(data_list)
-     return render(request,"info_list.html")
+     data_list = UserInfo.objects.all()
+     return render(request,"info_list.html",{"data_list":data_list})
+
+def info_add(request):
+     if request.method == "GET":        #第一次訪問是GET,按下提交之後再次訪問變成POST
+          return render(request,"info_add.html")
+     #獲取提交用戶的數據
+     user = request.POST.get("user")    #取得用戶的輸入
+     pwd = request.POST.get("password")
+     age = request.POST.get("age")
+
+     UserInfo.objects.create(name=user,password=pwd,age=age)
+
+     return HttpResponse("添加成功")

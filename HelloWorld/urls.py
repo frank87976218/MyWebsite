@@ -32,5 +32,6 @@ urlpatterns = [
     # 用戶登錄
     path('login/', views.login),
 
-    path('orm/', views.UserInfo),
+    path('info_list/', views.info_list),
+    path('info/add/', views.info_add),
 ]
