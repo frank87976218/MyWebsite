@@ -20,18 +20,19 @@ from app01 import views
 
 urlpatterns = [
     # path('admin/', admin.site.urls),
-    #www.xxx.com/index/ ->函數
+    # www.xxx.com/index/ ->函數
     path('index/', views.index),
     path('user/list/', views.user_list),
     path('user/add/', views.user_add),
     path('tpl/', views.tpl),
-    #情報新聞
+    # 情報新聞
     path('news/', views.news),
     # 請求與響應
     path('something/', views.something),
     # 用戶登錄
     path('login/', views.login),
 
-    path('info_list/', views.info_list),
+    path('info/list/', views.info_list),
     path('info/add/', views.info_add),
+    path('info/delete/', views.info_delete),
 ]
